@@ -16,6 +16,7 @@ $originalName = $_POST['originalName'];
 $newName = $_POST['newName'];
 
 $sql = "UPDATE tableau_resultats SET nom = '$newName' WHERE nom = '$originalName'";
+#$sql = "UPDATE tableau_resultats SET nom = '$newName', points = '20' WHERE nom = '$originalName'";
 
 if (mysqli_query($conn, $sql)) {
     #echo "Nom mis à jour avec succès.";
