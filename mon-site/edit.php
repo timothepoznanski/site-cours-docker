@@ -18,7 +18,11 @@ $newName = $_POST['newName'];
 $sql = "UPDATE tableau_resultats SET nom = '$newName' WHERE nom = '$originalName'";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Nom mis à jour avec succès.";
+    #echo "Nom mis à jour avec succès.";
+    mysqli_close($conn);
+
+    header("Location: index.php");
+    exit;
 } else {
     echo "Erreur lors de la mise à jour du nom : " . mysqli_error($conn);
 }
